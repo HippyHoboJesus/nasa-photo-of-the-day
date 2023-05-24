@@ -1,4 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledNP = styled.div`
+background-color: ${pr => pr.theme.secondaryColor}
+color: ${pr => pr.theme.primaryColor}
+`
 
 const dummyData = {
     date: "2023-05-23",
@@ -9,12 +15,12 @@ const dummyData = {
 
 const NasaPhoto = (props) => {
     return  (
-        <div className="nasa-photo wrapper">
+        <StyledNP className="nasa-photo wrapper">
             <h3>{props.photo.title}</h3>
             <p>{props.photo.date}</p>
             <img src={props.photo.hdurl} />
             <p>{props.photo.explanation}</p>
-        </div>
+        </StyledNP>
     )
 }
 
